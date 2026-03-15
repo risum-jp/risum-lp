@@ -9,7 +9,7 @@
   <meta name="description" content="リスムは、空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。あなたの想いを形にする、丁寧なリノベーションをご提案します。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Quicksand:wght@400;600;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -17,156 +17,304 @@
       --color-primary-light: #52B788;
       --color-primary-dark: #1B4332;
       --color-accent: #D4A853;
-      --color-bg: #FAFAF8;
-      --color-text: #1A1A1A;
-      --color-text-muted: #6B7280;
-      --color-border: #E5E7EB;
-      --font-sans: 'Noto Sans JP', sans-serif;
+      --color-bg: #FDFCF9;
+      --color-bg-warm: #F7F2ED;
+      --color-bg-warm2: #EEE8E1;
+      --color-text: #2C2C2C;
+      --color-text-muted: #6B6560;
+      --color-border: #DDD8D2;
+      --color-line: #2C2C2C;
+      --font-main: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+      --font-en: 'Quicksand', sans-serif;
       --font-serif: 'Noto Serif JP', serif;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-sans); background: var(--color-bg); color: var(--color-text); line-height: 1.7; }
+    body { font-family: var(--font-main); background: var(--color-bg); color: var(--color-text); line-height: 1.8; font-weight: 400; }
 
-    /* HEADER */
-    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,248,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border); padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-primary-dark); text-decoration: none; letter-spacing: 0.05em; }
+    /* ── HEADER ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253,252,249,0.96); backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--color-line);
+      padding: 0 48px; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-family: var(--font-serif); font-size: 1.6rem; color: var(--color-primary-dark); text-decoration: none; letter-spacing: 0.06em; }
     .logo span { color: var(--color-primary-light); }
-    nav { display: flex; gap: 32px; align-items: center; }
-    nav a { text-decoration: none; color: var(--color-text-muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav { display: flex; gap: 36px; align-items: center; }
+    nav a { text-decoration: none; color: var(--color-text-muted); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.04em; }
     nav a:hover { color: var(--color-primary); }
-    .nav-cta { background: var(--color-primary); color: #fff !important; padding: 10px 24px; border-radius: 100px; font-weight: 700 !important; }
-    .nav-cta:hover { background: var(--color-primary-dark) !important; }
+    .nav-cta {
+      background: var(--color-primary); color: #fff !important;
+      padding: 10px 26px; border-radius: 100px; font-weight: 700 !important;
+      box-shadow: 0 4px 0 var(--color-primary-dark);
+      transition: all 0.15s;
+    }
+    .nav-cta:hover { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-primary-dark); }
 
-    /* HERO */
-    .hero { min-height: 100vh; padding-top: 64px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; max-width: 1200px; margin: 0 auto; padding-left: 60px; padding-right: 60px; gap: 60px; }
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; padding-top: 68px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      max-width: 1200px; margin: 0 auto;
+      padding-left: 60px; padding-right: 60px; gap: 56px;
+    }
     .hero-content { padding: 80px 0; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: #E8F5E9; color: var(--color-primary); font-size: 0.8rem; font-weight: 700; padding: 6px 16px; border-radius: 100px; margin-bottom: 24px; letter-spacing: 0.08em; }
-    .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary-light); }
-    .hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.4; color: var(--color-primary-dark); margin-bottom: 24px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #E3F0E8; color: var(--color-primary);
+      font-size: 0.78rem; font-weight: 700; padding: 6px 16px;
+      border-radius: 100px; margin-bottom: 28px; letter-spacing: 0.1em;
+      border: 1px solid #B7D9C4;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      line-height: 1.5; color: var(--color-primary-dark); margin-bottom: 24px;
+    }
     .hero h1 em { font-style: normal; color: var(--color-primary-light); }
-    .hero-desc { font-size: 1rem; color: var(--color-text-muted); margin-bottom: 40px; max-width: 440px; }
+    .hero-desc { font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 40px; max-width: 440px; line-height: 1.9; }
     .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary { background: var(--color-primary); color: #fff; padding: 16px 36px; border-radius: 100px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-primary:hover { background: var(--color-primary-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,106,79,0.3); }
-    .btn-secondary { background: transparent; color: var(--color-primary); padding: 16px 36px; border-radius: 100px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid var(--color-primary); transition: all 0.2s; }
-    .btn-secondary:hover { background: var(--color-primary); color: #fff; }
-    .hero-visual { position: relative; height: 520px; }
-    .hero-image-main { width: 100%; height: 100%; background: linear-gradient(135deg, #52B788 0%, #2D6A4F 50%, #1B4332 100%); border-radius: 24px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
-    .hero-image-main::before { content: '🏠'; font-size: 120px; opacity: 0.3; position: absolute; bottom: 20px; right: 20px; }
+
+    .btn-primary {
+      background: var(--color-primary); color: #fff;
+      padding: 16px 40px; border-radius: 100px; font-weight: 700; font-size: 1rem;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 5px 0 var(--color-primary-dark); transition: all 0.15s;
+      letter-spacing: 0.04em;
+    }
+    .btn-primary:hover { transform: translateY(3px); box-shadow: 0 2px 0 var(--color-primary-dark); }
+    .btn-secondary {
+      background: #fff; color: var(--color-primary);
+      padding: 16px 36px; border-radius: 100px; font-weight: 700; font-size: 1rem;
+      text-decoration: none; border: 2px solid var(--color-primary);
+      box-shadow: 0 5px 0 var(--color-border); transition: all 0.15s;
+    }
+    .btn-secondary:hover { transform: translateY(3px); box-shadow: 0 2px 0 var(--color-border); }
+
+    .hero-visual { position: relative; height: 500px; }
+    .hero-image-main {
+      width: 100%; height: 100%;
+      background: linear-gradient(145deg, #74C69D 0%, #2D6A4F 60%, #1B4332 100%);
+      border-radius: 24px; overflow: hidden; position: relative;
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid var(--color-line);
+    }
     .hero-image-text { text-align: center; color: #fff; z-index: 1; }
-    .hero-image-text p { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; line-height: 1.5; }
-    .hero-image-text span { font-size: 0.9rem; opacity: 0.8; display: block; margin-top: 8px; }
-    .hero-stat { position: absolute; background: #fff; border-radius: 16px; padding: 16px 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
-    .hero-stat-1 { bottom: -24px; left: -24px; }
-    .hero-stat-2 { top: 40px; right: -24px; }
-    .hero-stat .num { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--color-primary); }
-    .hero-stat .label { font-size: 0.75rem; color: var(--color-text-muted); }
+    .hero-image-text p { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 700; line-height: 1.6; }
+    .hero-image-text span { font-family: var(--font-en); font-size: 0.85rem; opacity: 0.75; display: block; margin-top: 10px; letter-spacing: 0.12em; }
+    .hero-stat {
+      position: absolute; background: #fff; border-radius: 14px;
+      padding: 14px 20px; box-shadow: 0 6px 0 var(--color-border); border: 2px solid var(--color-line);
+    }
+    .hero-stat-1 { bottom: -20px; left: -20px; }
+    .hero-stat-2 { top: 32px; right: -20px; }
+    .hero-stat .num { font-family: var(--font-en); font-size: 1.9rem; font-weight: 700; color: var(--color-primary); line-height: 1; }
+    .hero-stat .label { font-size: 0.72rem; color: var(--color-text-muted); margin-top: 4px; }
 
-    /* SECTION COMMON */
-    section { padding: 100px 40px; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; color: var(--color-primary-light); text-transform: uppercase; margin-bottom: 12px; }
-    .section-title { font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--color-primary-dark); margin-bottom: 16px; line-height: 1.4; }
-    .section-desc { color: var(--color-text-muted); max-width: 560px; font-size: 1rem; }
-    .section-header { margin-bottom: 60px; }
+    /* ── SECTION DIVIDER ── */
+    .section-divider { height: 2px; background: var(--color-line); }
 
-    /* FEATURES */
-    .features { background: #fff; }
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .feature-card { padding: 40px 32px; border-radius: 20px; border: 1px solid var(--color-border); transition: all 0.3s; background: var(--color-bg); }
-    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(45,106,79,0.12); border-color: var(--color-primary-light); }
-    .feature-icon { font-size: 2.4rem; margin-bottom: 20px; }
-    .feature-title { font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-primary-dark); margin-bottom: 12px; }
-    .feature-desc { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.8; }
+    /* ── SECTION COMMON ── */
+    section { padding: 96px 48px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-en); font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.2em; color: var(--color-primary-light); text-transform: uppercase; margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--font-serif); font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      color: var(--color-primary-dark); margin-bottom: 12px; line-height: 1.5;
+    }
+    .section-title-underline {
+      display: inline-block; position: relative; padding-bottom: 12px;
+    }
+    .section-title-underline::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 3px; background: var(--color-primary-light); border-radius: 2px;
+    }
+    .section-desc { color: var(--color-text-muted); max-width: 540px; font-size: 0.95rem; }
+    .section-header { margin-bottom: 56px; }
 
-    /* PROCESS */
-    .process { background: var(--color-bg); }
-    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
-    .process-steps::before { content: ''; position: absolute; top: 40px; left: 60px; right: 60px; height: 2px; background: linear-gradient(to right, var(--color-primary-light), var(--color-primary)); z-index: 0; }
+    /* ── CONCERNS (課題提示) ── */
+    .concerns { background: var(--color-bg-warm); }
+    .concerns-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .concern-card {
+      background: #fff; border-radius: 16px; padding: 36px 28px;
+      border: 2px solid var(--color-border);
+      box-shadow: 0 4px 0 var(--color-bg-warm2);
+      transition: transform 0.2s;
+    }
+    .concern-card:hover { transform: translateY(-4px); }
+    .concern-num {
+      font-family: var(--font-en); font-size: 2.4rem; font-weight: 700;
+      color: var(--color-bg-warm2); line-height: 1; margin-bottom: 12px;
+    }
+    .concern-title { font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 10px; }
+    .concern-desc { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.85; }
+    .concern-icon { font-size: 2rem; margin-bottom: 16px; }
+
+    /* ── FEATURES ── */
+    .features { background: var(--color-bg); }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .feature-card {
+      padding: 40px 32px; border-radius: 16px;
+      border: 2px solid var(--color-border); background: #fff;
+      box-shadow: 0 4px 0 var(--color-border);
+      transition: transform 0.2s;
+    }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-num {
+      font-family: var(--font-en); font-size: 0.72rem; font-weight: 700;
+      color: var(--color-primary-light); letter-spacing: 0.15em; margin-bottom: 16px;
+    }
+    .feature-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .feature-title { font-size: 1.1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 10px; }
+    .feature-desc { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.85; }
+    .feature-divider { width: 40px; height: 3px; background: var(--color-primary-light); border-radius: 2px; margin-bottom: 16px; }
+
+    /* ── PROCESS ── */
+    .process { background: var(--color-bg-warm); }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+    .process-steps::before {
+      content: ''; position: absolute; top: 36px; left: 80px; right: 80px;
+      height: 2px; background: repeating-linear-gradient(to right, var(--color-primary-light) 0, var(--color-primary-light) 8px, transparent 8px, transparent 16px);
+      z-index: 0;
+    }
     .process-step { text-align: center; position: relative; z-index: 1; }
-    .process-num { width: 80px; height: 80px; border-radius: 50%; background: var(--color-primary); color: #fff; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 4px 16px rgba(45,106,79,0.3); }
-    .process-step-title { font-weight: 700; color: var(--color-primary-dark); margin-bottom: 8px; font-size: 1rem; }
-    .process-step-desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.7; }
+    .process-num {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--color-primary); color: #fff;
+      font-family: var(--font-en); font-size: 1.3rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 0 var(--color-primary-dark);
+      border: 2px solid var(--color-line);
+    }
+    .process-step-title { font-weight: 700; color: var(--color-primary-dark); margin-bottom: 8px; font-size: 0.95rem; }
+    .process-step-desc { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.8; }
 
-    /* CASES */
-    .cases { background: #fff; }
-    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .case-card { border-radius: 20px; overflow: hidden; border: 1px solid var(--color-border); transition: all 0.3s; background: var(--color-bg); }
-    .case-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
-    .case-img { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+    /* ── CASES ── */
+    .cases { background: var(--color-bg); }
+    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .case-card {
+      border-radius: 16px; overflow: hidden;
+      border: 2px solid var(--color-border); background: #fff;
+      box-shadow: 0 4px 0 var(--color-border); transition: transform 0.2s;
+    }
+    .case-card:hover { transform: translateY(-4px); }
+    .case-img { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
     .case-img-1 { background: linear-gradient(135deg, #B7E4C7, #52B788); }
-    .case-img-2 { background: linear-gradient(135deg, #D4A853, #A97C2B); }
-    .case-img-3 { background: linear-gradient(135deg, #74C69D, #2D6A4F); }
+    .case-img-2 { background: linear-gradient(135deg, #EEE8D0, #D4A853); }
+    .case-img-3 { background: linear-gradient(135deg, #C8E6D4, #2D6A4F); }
     .case-body { padding: 24px; }
-    .case-tag { display: inline-block; background: #E8F5E9; color: var(--color-primary); font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 12px; }
-    .case-title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--color-primary-dark); margin-bottom: 8px; }
-    .case-desc { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 16px; }
-    .case-meta { display: flex; gap: 16px; font-size: 0.8rem; color: var(--color-text-muted); }
-    .case-meta strong { color: var(--color-primary); }
+    .case-tag {
+      display: inline-block; background: #E3F0E8; color: var(--color-primary);
+      font-size: 0.72rem; font-weight: 700; padding: 4px 12px;
+      border-radius: 100px; margin-bottom: 10px; letter-spacing: 0.06em;
+    }
+    .case-title { font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 8px; line-height: 1.6; }
+    .case-desc { font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 16px; }
+    .case-meta { display: flex; gap: 16px; font-size: 0.78rem; color: var(--color-text-muted); }
+    .case-meta strong { color: var(--color-primary); font-family: var(--font-en); }
 
-    /* VOICE */
-    .voice { background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%); }
-    .voice .section-title { color: #fff; }
-    .voice .section-label { color: var(--color-primary-light); }
-    .voice .section-desc { color: rgba(255,255,255,0.7); }
+    /* ── VOICE ── */
+    .voice { background: var(--color-bg-warm); }
     .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .voice-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 32px; }
-    .voice-stars { color: var(--color-accent); font-size: 1.2rem; margin-bottom: 16px; }
-    .voice-text { color: rgba(255,255,255,0.9); font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px; font-style: italic; }
-    .voice-author { display: flex; align-items: center; gap: 12px; }
-    .voice-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--color-primary-light); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
-    .voice-name { color: #fff; font-weight: 700; font-size: 0.9rem; }
-    .voice-info { color: rgba(255,255,255,0.6); font-size: 0.8rem; }
+    .voice-card {
+      background: #fff; border-radius: 16px; padding: 32px;
+      border: 2px solid var(--color-border); box-shadow: 0 4px 0 var(--color-bg-warm2);
+      position: relative;
+    }
+    .voice-quote {
+      font-family: var(--font-en); font-size: 4rem; font-weight: 700;
+      color: var(--color-primary-light); line-height: 1; margin-bottom: 8px; opacity: 0.5;
+    }
+    .voice-stars { color: var(--color-accent); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .voice-text { color: var(--color-text); font-size: 0.9rem; line-height: 1.9; margin-bottom: 24px; }
+    .voice-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--color-border); }
+    .voice-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--color-bg-warm); border: 2px solid var(--color-border);
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .voice-name { font-weight: 700; font-size: 0.88rem; color: var(--color-text); }
+    .voice-info { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px; }
 
-    /* CTA */
-    .cta { background: var(--color-bg); text-align: center; }
-    .cta-box { background: #fff; border-radius: 32px; padding: 80px 60px; border: 2px solid var(--color-border); max-width: 780px; margin: 0 auto; }
-    .cta-box .section-title { text-align: center; margin-bottom: 16px; }
-    .cta-box .section-desc { text-align: center; margin: 0 auto 40px; }
-    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .cta-note { margin-top: 20px; font-size: 0.8rem; color: var(--color-text-muted); }
-
-    /* FAQ */
-    .faq { background: #fff; }
+    /* ── FAQ ── */
+    .faq { background: var(--color-bg); }
     .faq-list { max-width: 720px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid var(--color-border); padding: 28px 0; }
-    .faq-q { font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 12px; display: flex; gap: 12px; align-items: flex-start; }
-    .faq-q::before { content: 'Q'; background: var(--color-primary); color: #fff; width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
-    .faq-a { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.8; padding-left: 36px; }
+    .faq-item { border-bottom: 2px solid var(--color-border); padding: 28px 0; }
+    .faq-q {
+      font-weight: 700; color: var(--color-primary-dark); font-size: 0.97rem;
+      margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; line-height: 1.6;
+    }
+    .faq-q-icon {
+      background: var(--color-primary); color: #fff;
+      width: 26px; height: 26px; border-radius: 8px; border: 1.5px solid var(--color-line);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-en); font-size: 0.78rem; font-weight: 700; flex-shrink: 0;
+    }
+    .faq-a { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.9; padding-left: 40px; }
 
-    /* FOOTER */
-    footer { background: var(--color-primary-dark); color: rgba(255,255,255,0.7); padding: 60px 40px 40px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
-    .footer-logo { font-family: var(--font-serif); font-size: 1.8rem; color: #fff; margin-bottom: 16px; }
+    /* ── CTA ── */
+    .cta { background: var(--color-bg-warm); text-align: center; }
+    .cta-box {
+      background: #fff; border-radius: 24px; padding: 72px 56px;
+      border: 2px solid var(--color-line);
+      box-shadow: 6px 6px 0 var(--color-bg-warm2);
+      max-width: 760px; margin: 0 auto;
+    }
+    .cta-box .section-title { text-align: center; margin-bottom: 12px; }
+    .cta-box .section-desc { text-align: center; margin: 0 auto 36px; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .cta-note { margin-top: 20px; font-size: 0.78rem; color: var(--color-text-muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--color-primary-dark); color: rgba(255,255,255,0.7);
+      padding: 64px 48px 40px;
+      border-top: 3px solid var(--color-line);
+    }
+    .footer-inner { max-width: 1080px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.15); margin-bottom: 36px;
+    }
+    .footer-logo { font-family: var(--font-serif); font-size: 1.8rem; color: #fff; margin-bottom: 14px; }
     .footer-logo span { color: var(--color-primary-light); }
-    .footer-about { font-size: 0.85rem; line-height: 1.8; }
-    .footer-nav h4 { color: #fff; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.08em; }
+    .footer-about { font-size: 0.83rem; line-height: 1.9; }
+    .footer-nav h4 { color: #fff; font-size: 0.83rem; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.1em; }
     .footer-nav ul { list-style: none; }
     .footer-nav li { margin-bottom: 10px; }
-    .footer-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-nav a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
     .footer-nav a:hover { color: var(--color-primary-light); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       header { padding: 0 20px; }
       nav { display: none; }
       .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
-      .hero-visual { height: 280px; }
+      .hero-visual { height: 260px; }
       section { padding: 60px 24px; }
-      .features-grid, .cases-grid, .voice-grid { grid-template-columns: 1fr; }
+      .concerns-grid, .features-grid, .cases-grid, .voice-grid { grid-template-columns: 1fr; }
       .process-steps { grid-template-columns: 1fr 1fr; }
       .process-steps::before { display: none; }
-      .footer-top { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .cta-box { padding: 48px 28px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
     <a href="#" class="logo">リ<span>ス</span>ム</a>
     <nav>
+      <a href="#concerns">お悩み</a>
       <a href="#features">特長</a>
       <a href="#process">流れ</a>
       <a href="#cases">実績</a>
@@ -175,11 +323,15 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
       <div class="hero-badge">空き家・古民家リノベーション専門</div>
       <h1>眠っている家に、<br /><em>新しい命</em>を吹き込む</h1>
-      <p class="hero-desc">リスムは、空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。地域に根ざした丁寧な提案で、あなたの想いを形にします。</p>
+      <p class="hero-desc">
+        リスムは、空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。
+        地域に根ざした丁寧な提案で、あなたの想いを形にします。
+      </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">無料相談を予約する →</a>
         <a href="#cases" class="btn-secondary">施工事例を見る</a>
@@ -203,25 +355,67 @@
     </div>
   </div>
 
+  <div class="section-divider"></div>
+
+  <!-- CONCERNS -->
+  <section class="concerns" id="concerns">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Concerns</div>
+        <h2 class="section-title"><span class="section-title-underline">こんなお悩みありませんか？</span></h2>
+        <p class="section-desc">空き家・古民家をお持ちの方のよくある3つの悩みに、リスムは一貫して応えます。</p>
+      </div>
+      <div class="concerns-grid">
+        <div class="concern-card">
+          <div class="concern-icon">🏚️</div>
+          <div class="concern-num">01</div>
+          <div class="concern-title">誰も住まなくなった実家が放置されている</div>
+          <p class="concern-desc">老朽化や管理コストが気になるが、どこに相談すればいいかわからない。</p>
+        </div>
+        <div class="concern-card">
+          <div class="concern-icon">🔑</div>
+          <div class="concern-num">02</div>
+          <div class="concern-title">古民家を活用したいけど費用が不安</div>
+          <p class="concern-desc">リノベーションに興味はあるが、古い建物は費用が高そうで踏み出せない。</p>
+        </div>
+        <div class="concern-card">
+          <div class="concern-icon">📋</div>
+          <div class="concern-num">03</div>
+          <div class="concern-title">補助金や手続きが複雑で進められない</div>
+          <p class="concern-desc">補助金制度があると聞いたが、申請方法が難しくてどこから手をつければいいかわからない。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- FEATURES -->
   <section class="features" id="features">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-label">Features</div>
-        <h2 class="section-title">リスムが選ばれる3つの理由</h2>
-        <p class="section-desc">空き家・古民家のリノベーションに特化したプロフェッショナルチームが、ワンストップでサポートします。</p>
+        <h2 class="section-title"><span class="section-title-underline">リスムが選ばれる3つの理由</span></h2>
+        <p class="section-desc">空き家・古民家リノベーションに特化したプロが、ワンストップでサポートします。</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
+          <div class="feature-num">REASON 01</div>
+          <div class="feature-divider"></div>
           <div class="feature-icon">🏡</div>
           <h3 class="feature-title">古民家・空き家に特化</h3>
-          <p class="feature-desc">一般的なリフォーム会社では断られがちな古民家・空き家も、豊富な経験と専門知識でしっかり対応。構造診断から竣工まで一貫してサポートします。</p>
+          <p class="feature-desc">一般的なリフォーム会社では断られがちな古民家・空き家も、豊富な経験と専門知識でしっかり対応。構造診断から竣工まで一貫サポートします。</p>
         </div>
         <div class="feature-card">
+          <div class="feature-num">REASON 02</div>
+          <div class="feature-divider"></div>
           <div class="feature-icon">💬</div>
           <h3 class="feature-title">ワンストップ相談窓口</h3>
           <p class="feature-desc">設計・施工・資金調達・補助金申請まで、窓口はリスム一本。複数業者への連絡や調整の手間を省き、スムーズな進行を実現します。</p>
         </div>
         <div class="feature-card">
+          <div class="feature-num">REASON 03</div>
+          <div class="feature-divider"></div>
           <div class="feature-icon">🌿</div>
           <h3 class="feature-title">地域素材×現代デザイン</h3>
           <p class="feature-desc">地元の木材や職人技を活かしながら、現代の暮らしに合ったデザインに再生。その土地の魅力を引き出した、唯一無二の住まいをご提案します。</p>
@@ -230,11 +424,14 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <!-- PROCESS -->
   <section class="process" id="process">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-label">Process</div>
-        <h2 class="section-title">ご相談から完成まで</h2>
+        <h2 class="section-title"><span class="section-title-underline">ご相談から完成まで</span></h2>
         <p class="section-desc">はじめての方でも安心。4つのステップで、理想の住まいへ。</p>
       </div>
       <div class="process-steps">
@@ -262,11 +459,14 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <!-- CASES -->
   <section class="cases" id="cases">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-label">Cases</div>
-        <h2 class="section-title">施工事例</h2>
+        <h2 class="section-title"><span class="section-title-underline">施工事例</span></h2>
         <p class="section-desc">実際にリスムが手がけた空き家・古民家の再生事例をご紹介します。</p>
       </div>
       <div class="cases-grid">
@@ -310,17 +510,21 @@
     </div>
   </section>
 
-  <section class="voice">
+  <div class="section-divider"></div>
+
+  <!-- VOICE -->
+  <section class="voice" id="voice">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-label">Voice</div>
-        <h2 class="section-title">お客様の声</h2>
+        <h2 class="section-title"><span class="section-title-underline">お客様の声</span></h2>
         <p class="section-desc">リスムを選んでいただいたお客様からのリアルな声をご紹介します。</p>
       </div>
       <div class="voice-grid">
         <div class="voice-card">
+          <div class="voice-quote">"</div>
           <div class="voice-stars">★★★★★</div>
-          <p class="voice-text">「他社では難しいと断られた古民家でしたが、リスムさんは可能性を見出してくれました。完成した住まいは想像以上で、毎日が楽しいです。」</p>
+          <p class="voice-text">他社では難しいと断られた古民家でしたが、リスムさんは可能性を見出してくれました。完成した住まいは想像以上で、毎日が楽しいです。</p>
           <div class="voice-author">
             <div class="voice-avatar">👨</div>
             <div>
@@ -330,8 +534,9 @@
           </div>
         </div>
         <div class="voice-card">
+          <div class="voice-quote">"</div>
           <div class="voice-stars">★★★★★</div>
-          <p class="voice-text">「補助金の申請もすべてお任せできて助かりました。費用が想定より大幅に抑えられ、使いやすい民泊施設が完成しました。」</p>
+          <p class="voice-text">補助金の申請もすべてお任せできて助かりました。費用が想定より大幅に抑えられ、使いやすい民泊施設が完成しました。</p>
           <div class="voice-author">
             <div class="voice-avatar">👩</div>
             <div>
@@ -341,8 +546,9 @@
           </div>
         </div>
         <div class="voice-card">
+          <div class="voice-quote">"</div>
           <div class="voice-stars">★★★★★</div>
-          <p class="voice-text">「担当の方が毎週進捗を報告してくれたので安心でした。遠方に住んでいても実家の改修をスムーズに進めることができました。」</p>
+          <p class="voice-text">担当の方が毎週進捗を報告してくれたので安心でした。遠方に住んでいても実家の改修をスムーズに進めることができました。</p>
           <div class="voice-author">
             <div class="voice-avatar">👨</div>
             <div>
@@ -355,43 +561,49 @@
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <!-- FAQ -->
   <section class="faq" id="faq">
     <div class="section-inner">
       <div class="section-header" style="text-align:center;">
         <div class="section-label">FAQ</div>
-        <h2 class="section-title">よくあるご質問</h2>
+        <h2 class="section-title" style="text-align:center;">よくあるご質問</h2>
       </div>
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-q">相談だけでも大丈夫ですか？</div>
+          <div class="faq-q"><span class="faq-q-icon">Q</span>相談だけでも大丈夫ですか？</div>
           <p class="faq-a">はい、もちろんです。初回相談は完全無料です。物件を購入するかどうかまだ決まっていない段階でも、お気軽にご相談ください。</p>
         </div>
         <div class="faq-item">
-          <div class="faq-q">遠方に住んでいますが相談できますか？</div>
+          <div class="faq-q"><span class="faq-q-icon">Q</span>遠方に住んでいますが相談できますか？</div>
           <p class="faq-a">オンライン（Zoom）での相談に対応しています。現地調査は提携パートナーが行い、進捗報告も定期的にオンラインで実施しますので、遠方の方でも安心してご依頼いただけます。</p>
         </div>
         <div class="faq-item">
-          <div class="faq-q">補助金は使えますか？</div>
+          <div class="faq-q"><span class="faq-q-icon">Q</span>補助金は使えますか？</div>
           <p class="faq-a">国・都道府県・市区町村の補助金・助成金を積極的に活用しています。物件の状況や工事内容によって使える補助金が異なりますので、相談時に詳しくご案内します。</p>
         </div>
         <div class="faq-item">
-          <div class="faq-q">工事中の費用はいつ払いますか？</div>
+          <div class="faq-q"><span class="faq-q-icon">Q</span>工事中の費用はいつ払いますか？</div>
           <p class="faq-a">一般的には「着工時・中間時・完成時」の3回払いとなります。ご事情に応じてご相談も可能ですので、お気軽にお申し付けください。</p>
         </div>
         <div class="faq-item">
-          <div class="faq-q">アフターサポートはありますか？</div>
+          <div class="faq-q"><span class="faq-q-icon">Q</span>アフターサポートはありますか？</div>
           <p class="faq-a">お引渡し後も定期点検（1ヶ月・6ヶ月・1年・2年）を実施しています。気になる点があればいつでもご連絡ください。</p>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
+  <!-- CTA -->
   <section class="cta" id="contact">
     <div class="section-inner">
       <div class="cta-box">
         <div class="section-label" style="text-align:center;">Contact</div>
-        <h2 class="section-title">まずは無料相談から</h2>
-        <p class="section-desc">空き家・古民家のことなら、どんな小さなご相談でもお気軽に。専門スタッフが丁寧にお答えします。</p>
+        <h2 class="section-title" style="text-align:center;">まずは無料相談から</h2>
+        <p class="section-desc" style="text-align:center; margin: 0 auto 36px;">空き家・古民家のことなら、どんな小さなご相談でもお気軽に。専門スタッフが丁寧にお答えします。</p>
         <div class="cta-actions">
           <a href="#" class="btn-primary">無料相談を予約する →</a>
           <a href="#" class="btn-secondary">資料請求する</a>
@@ -401,6 +613,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-top">
