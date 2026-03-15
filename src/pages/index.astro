@@ -6,655 +6,675 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>リスム | 空き家・古民家のリノベーション専門</title>
-  <meta name="description" content="リスムは、空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。あなたの想いを形にする、丁寧なリノベーションをご提案します。" />
+  <meta name="description" content="リスムは、空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Quicksand:wght@400;600;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --color-primary: #2D6A4F;
-      --color-primary-light: #52B788;
-      --color-primary-dark: #1B4332;
-      --color-accent: #D4A853;
-      --color-bg: #FDFCF9;
-      --color-bg-warm: #F7F2ED;
-      --color-bg-warm2: #EEE8E1;
-      --color-text: #2C2C2C;
-      --color-text-muted: #6B6560;
-      --color-border: #DDD8D2;
-      --color-line: #2C2C2C;
-      --font-main: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
-      --font-en: 'Quicksand', sans-serif;
-      --font-serif: 'Noto Serif JP', serif;
+      --green: #2D6A4F;
+      --green-l: #52B788;
+      --green-d: #1B4332;
+      --green-pale: #D8EFDF;
+      --amber: #C87941;
+      --amber-pale: #FBF0E4;
+      --cream: #FDFAF5;
+      --warm: #F5EFE6;
+      --warm2: #EAE0D3;
+      --text: #1E1E1E;
+      --text-s: #6B6560;
+      --border: #D8D0C6;
+      --font: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', sans-serif;
+      --serif: 'Noto Serif JP', serif;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-main); background: var(--color-bg); color: var(--color-text); line-height: 1.8; font-weight: 400; }
+    body { font-family: var(--font); background: var(--cream); color: var(--text); line-height: 1.8; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-    /* ── HEADER ── */
+    /* ─── HEADER ─── */
     header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(253,252,249,0.96); backdrop-filter: blur(8px);
-      border-bottom: 2px solid var(--color-line);
-      padding: 0 48px; height: 68px;
+      background: rgba(253,250,245,0.97); backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--text);
+      height: 64px; padding: 0 40px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .logo { font-family: var(--font-serif); font-size: 1.6rem; color: var(--color-primary-dark); text-decoration: none; letter-spacing: 0.06em; }
-    .logo span { color: var(--color-primary-light); }
-    nav { display: flex; gap: 36px; align-items: center; }
-    nav a { text-decoration: none; color: var(--color-text-muted); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.04em; }
-    nav a:hover { color: var(--color-primary); }
-    .nav-cta {
-      background: var(--color-primary); color: #fff !important;
-      padding: 10px 26px; border-radius: 100px; font-weight: 700 !important;
-      box-shadow: 0 4px 0 var(--color-primary-dark);
-      transition: all 0.15s;
+    .logo { font-family: var(--serif); font-size: 1.5rem; color: var(--green-d); text-decoration: none; letter-spacing: .06em; }
+    .logo em { font-style: normal; color: var(--green-l); }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a { text-decoration: none; color: var(--text-s); font-size: .85rem; font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--green); }
+    .nav-btn {
+      background: var(--green); color: #fff; padding: 9px 22px;
+      border-radius: 6px; font-weight: 700; font-size: .85rem;
+      text-decoration: none; border: 2px solid var(--text);
+      box-shadow: 3px 3px 0 var(--text); transition: all .15s;
     }
-    .nav-cta:hover { transform: translateY(2px); box-shadow: 0 2px 0 var(--color-primary-dark); }
+    .nav-btn:hover { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--text); color: #fff; }
 
-    /* ── HERO ── */
+    /* ─── HERO ─── */
     .hero {
-      min-height: 100vh; padding-top: 68px;
-      display: grid; grid-template-columns: 1fr 1fr;
-      align-items: center;
-      max-width: 1200px; margin: 0 auto;
-      padding-left: 60px; padding-right: 60px; gap: 56px;
+      margin-top: 64px; position: relative;
+      height: calc(100vh - 64px); min-height: 560px;
+      overflow: hidden;
     }
-    .hero-content { padding: 80px 0; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1400&q=80') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(27,67,50,.82) 0%, rgba(27,67,50,.55) 55%, rgba(27,67,50,.15) 100%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      height: 100%; max-width: 1100px; margin: 0 auto;
+      padding: 0 56px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: #E3F0E8; color: var(--color-primary);
-      font-size: 0.78rem; font-weight: 700; padding: 6px 16px;
-      border-radius: 100px; margin-bottom: 28px; letter-spacing: 0.1em;
-      border: 1px solid #B7D9C4;
+      background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.45);
+      color: #fff; font-size: .75rem; font-weight: 700;
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 24px;
+      letter-spacing: .1em; width: fit-content;
     }
     .hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(1.9rem, 3.8vw, 3rem);
-      line-height: 1.5; color: var(--color-primary-dark); margin-bottom: 24px;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      color: #fff; line-height: 1.45; margin-bottom: 20px;
+      text-shadow: 0 2px 12px rgba(0,0,0,.3);
     }
-    .hero h1 em { font-style: normal; color: var(--color-primary-light); }
-    .hero-desc { font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 40px; max-width: 440px; line-height: 1.9; }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero h1 em { font-style: normal; color: #74C69D; }
+    .hero-desc { color: rgba(255,255,255,.88); font-size: .97rem; max-width: 480px; margin-bottom: 40px; line-height: 1.9; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-main {
+      background: var(--amber); color: #fff;
+      padding: 15px 38px; border-radius: 8px; font-weight: 800; font-size: 1rem;
+      text-decoration: none; border: 2px solid var(--text);
+      box-shadow: 4px 4px 0 rgba(0,0,0,.4); transition: all .15s; letter-spacing: .04em;
+    }
+    .btn-main:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 rgba(0,0,0,.4); }
+    .btn-sub {
+      background: rgba(255,255,255,.12); color: #fff;
+      padding: 15px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem;
+      text-decoration: none; border: 2px solid rgba(255,255,255,.6); transition: all .15s;
+    }
+    .btn-sub:hover { background: rgba(255,255,255,.22); }
+    .hero-scroll {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,.6); font-size: .72rem; letter-spacing: .15em;
+      text-align: center; z-index: 1;
+    }
+    .hero-scroll::after {
+      content: ''; display: block; width: 1px; height: 40px;
+      background: rgba(255,255,255,.4); margin: 8px auto 0;
+    }
 
-    .btn-primary {
-      background: var(--color-primary); color: #fff;
-      padding: 16px 40px; border-radius: 100px; font-weight: 700; font-size: 1rem;
-      text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-      box-shadow: 0 5px 0 var(--color-primary-dark); transition: all 0.15s;
-      letter-spacing: 0.04em;
+    /* ─── STATS ─── */
+    .stats { background: var(--green-d); border-bottom: 2px solid var(--text); }
+    .stats-inner {
+      max-width: 900px; margin: 0 auto; padding: 0 40px;
+      display: grid; grid-template-columns: repeat(3,1fr);
     }
-    .btn-primary:hover { transform: translateY(3px); box-shadow: 0 2px 0 var(--color-primary-dark); }
-    .btn-secondary {
-      background: #fff; color: var(--color-primary);
-      padding: 16px 36px; border-radius: 100px; font-weight: 700; font-size: 1rem;
-      text-decoration: none; border: 2px solid var(--color-primary);
-      box-shadow: 0 5px 0 var(--color-border); transition: all 0.15s;
+    .stat-item {
+      padding: 32px 24px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.15);
     }
-    .btn-secondary:hover { transform: translateY(3px); box-shadow: 0 2px 0 var(--color-border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--serif); font-size: 2.8rem; font-weight: 700;
+      color: var(--green-l); line-height: 1;
+    }
+    .stat-num span { font-size: 1.4rem; }
+    .stat-label { color: rgba(255,255,255,.7); font-size: .8rem; margin-top: 6px; }
 
-    .hero-visual { position: relative; height: 500px; }
-    .hero-image-main {
-      width: 100%; height: 100%;
-      background: linear-gradient(145deg, #74C69D 0%, #2D6A4F 60%, #1B4332 100%);
-      border-radius: 24px; overflow: hidden; position: relative;
-      display: flex; align-items: center; justify-content: center;
-      border: 3px solid var(--color-line);
+    /* ─── SECTION UTILS ─── */
+    .divider { height: 2px; background: var(--text); }
+    section { padding: 88px 40px; }
+    .sec-inner { max-width: 1080px; margin: 0 auto; }
+    .sec-label {
+      font-size: .72rem; font-weight: 800; letter-spacing: .2em;
+      color: var(--green-l); text-transform: uppercase; margin-bottom: 8px;
     }
-    .hero-image-text { text-align: center; color: #fff; z-index: 1; }
-    .hero-image-text p { font-family: var(--font-serif); font-size: 1.9rem; font-weight: 700; line-height: 1.6; }
-    .hero-image-text span { font-family: var(--font-en); font-size: 0.85rem; opacity: 0.75; display: block; margin-top: 10px; letter-spacing: 0.12em; }
-    .hero-stat {
-      position: absolute; background: #fff; border-radius: 14px;
-      padding: 14px 20px; box-shadow: 0 6px 0 var(--color-border); border: 2px solid var(--color-line);
+    .sec-title {
+      font-family: var(--serif); font-size: clamp(1.5rem,2.8vw,2.2rem);
+      color: var(--green-d); line-height: 1.5; margin-bottom: 10px;
     }
-    .hero-stat-1 { bottom: -20px; left: -20px; }
-    .hero-stat-2 { top: 32px; right: -20px; }
-    .hero-stat .num { font-family: var(--font-en); font-size: 1.9rem; font-weight: 700; color: var(--color-primary); line-height: 1; }
-    .hero-stat .label { font-size: 0.72rem; color: var(--color-text-muted); margin-top: 4px; }
+    .sec-desc { color: var(--text-s); font-size: .93rem; max-width: 520px; }
+    .sec-head { margin-bottom: 52px; }
+    .underline-deco {
+      display: inline; background: linear-gradient(transparent 65%, rgba(82,183,136,.35) 65%);
+    }
 
-    /* ── SECTION DIVIDER ── */
-    .section-divider { height: 2px; background: var(--color-line); }
-
-    /* ── SECTION COMMON ── */
-    section { padding: 96px 48px; }
-    .section-inner { max-width: 1080px; margin: 0 auto; }
-    .section-label {
-      font-family: var(--font-en); font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 0.2em; color: var(--color-primary-light); text-transform: uppercase; margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: var(--font-serif); font-size: clamp(1.5rem, 2.8vw, 2.2rem);
-      color: var(--color-primary-dark); margin-bottom: 12px; line-height: 1.5;
-    }
-    .section-title-underline {
-      display: inline-block; position: relative; padding-bottom: 12px;
-    }
-    .section-title-underline::after {
-      content: ''; position: absolute; bottom: 0; left: 0;
-      width: 100%; height: 3px; background: var(--color-primary-light); border-radius: 2px;
-    }
-    .section-desc { color: var(--color-text-muted); max-width: 540px; font-size: 0.95rem; }
-    .section-header { margin-bottom: 56px; }
-
-    /* ── CONCERNS (課題提示) ── */
-    .concerns { background: var(--color-bg-warm); }
-    .concerns-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    /* ─── CONCERNS ─── */
+    .concerns { background: var(--warm); }
+    .concern-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .concern-card {
-      background: #fff; border-radius: 16px; padding: 36px 28px;
-      border: 2px solid var(--color-border);
-      box-shadow: 0 4px 0 var(--color-bg-warm2);
-      transition: transform 0.2s;
+      background: #fff; border: 2px solid var(--border);
+      border-radius: 12px; padding: 32px 28px;
+      box-shadow: 4px 4px 0 var(--warm2); transition: transform .2s;
     }
     .concern-card:hover { transform: translateY(-4px); }
-    .concern-num {
-      font-family: var(--font-en); font-size: 2.4rem; font-weight: 700;
-      color: var(--color-bg-warm2); line-height: 1; margin-bottom: 12px;
-    }
-    .concern-title { font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 10px; }
-    .concern-desc { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.85; }
-    .concern-icon { font-size: 2rem; margin-bottom: 16px; }
+    .concern-card-icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .concern-card-num { font-family: var(--serif); font-size: 1rem; color: var(--green-l); font-weight: 700; margin-bottom: 10px; letter-spacing: .05em; }
+    .concern-card-title { font-size: 1rem; font-weight: 700; color: var(--green-d); margin-bottom: 10px; line-height: 1.6; }
+    .concern-card-body { font-size: .86rem; color: var(--text-s); line-height: 1.85; }
 
-    /* ── FEATURES ── */
-    .features { background: var(--color-bg); }
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .feature-card {
-      padding: 40px 32px; border-radius: 16px;
-      border: 2px solid var(--color-border); background: #fff;
-      box-shadow: 0 4px 0 var(--color-border);
-      transition: transform 0.2s;
+    /* ─── FEATURES ─── */
+    .features { background: var(--cream); }
+    .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .feat-card {
+      background: #fff; border: 2px solid var(--border);
+      border-radius: 12px; padding: 36px 28px;
+      box-shadow: 4px 4px 0 var(--warm2); transition: transform .2s;
     }
-    .feature-card:hover { transform: translateY(-4px); }
-    .feature-num {
-      font-family: var(--font-en); font-size: 0.72rem; font-weight: 700;
-      color: var(--color-primary-light); letter-spacing: 0.15em; margin-bottom: 16px;
+    .feat-card:hover { transform: translateY(-4px); }
+    .feat-tag {
+      display: inline-block; background: var(--green-pale); color: var(--green);
+      font-size: .7rem; font-weight: 800; padding: 3px 10px;
+      border-radius: 4px; margin-bottom: 18px; letter-spacing: .08em;
     }
-    .feature-icon { font-size: 2.2rem; margin-bottom: 16px; }
-    .feature-title { font-size: 1.1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 10px; }
-    .feature-desc { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.85; }
-    .feature-divider { width: 40px; height: 3px; background: var(--color-primary-light); border-radius: 2px; margin-bottom: 16px; }
+    .feat-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .feat-bar { width: 36px; height: 3px; background: var(--green-l); border-radius: 2px; margin-bottom: 14px; }
+    .feat-title { font-size: 1.05rem; font-weight: 700; color: var(--green-d); margin-bottom: 10px; }
+    .feat-body { font-size: .86rem; color: var(--text-s); line-height: 1.85; }
 
-    /* ── PROCESS ── */
-    .process { background: var(--color-bg-warm); }
-    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
-    .process-steps::before {
-      content: ''; position: absolute; top: 36px; left: 80px; right: 80px;
-      height: 2px; background: repeating-linear-gradient(to right, var(--color-primary-light) 0, var(--color-primary-light) 8px, transparent 8px, transparent 16px);
+    /* ─── PROCESS ─── */
+    .process { background: var(--warm); }
+    .proc-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; position: relative; }
+    .proc-grid::before {
+      content: ''; position: absolute; top: 35px; left: 70px; right: 70px; height: 2px;
+      background: repeating-linear-gradient(to right, var(--green-l) 0,var(--green-l) 8px, transparent 8px, transparent 16px);
       z-index: 0;
     }
-    .process-step { text-align: center; position: relative; z-index: 1; }
-    .process-num {
-      width: 72px; height: 72px; border-radius: 50%;
-      background: var(--color-primary); color: #fff;
-      font-family: var(--font-en); font-size: 1.3rem; font-weight: 700;
+    .proc-step { text-align: center; position: relative; z-index: 1; }
+    .proc-num {
+      width: 70px; height: 70px; border-radius: 50%;
+      background: var(--green); color: #fff; font-family: var(--serif);
+      font-size: 1.3rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
-      box-shadow: 0 4px 0 var(--color-primary-dark);
-      border: 2px solid var(--color-line);
+      margin: 0 auto 18px;
+      border: 2px solid var(--text); box-shadow: 3px 3px 0 var(--text);
     }
-    .process-step-title { font-weight: 700; color: var(--color-primary-dark); margin-bottom: 8px; font-size: 0.95rem; }
-    .process-step-desc { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.8; }
+    .proc-title { font-weight: 700; font-size: .93rem; color: var(--green-d); margin-bottom: 8px; }
+    .proc-body { font-size: .82rem; color: var(--text-s); line-height: 1.8; }
 
-    /* ── CASES ── */
-    .cases { background: var(--color-bg); }
-    .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    /* ─── CASES ─── */
+    .cases { background: var(--cream); }
+    .case-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .case-card {
-      border-radius: 16px; overflow: hidden;
-      border: 2px solid var(--color-border); background: #fff;
-      box-shadow: 0 4px 0 var(--color-border); transition: transform 0.2s;
+      border-radius: 12px; overflow: hidden;
+      border: 2px solid var(--border);
+      box-shadow: 4px 4px 0 var(--warm2); transition: transform .2s;
+      background: #fff;
     }
     .case-card:hover { transform: translateY(-4px); }
-    .case-img { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
-    .case-img-1 { background: linear-gradient(135deg, #B7E4C7, #52B788); }
-    .case-img-2 { background: linear-gradient(135deg, #EEE8D0, #D4A853); }
-    .case-img-3 { background: linear-gradient(135deg, #C8E6D4, #2D6A4F); }
-    .case-body { padding: 24px; }
+    .case-img-wrap { height: 200px; overflow: hidden; }
     .case-tag {
-      display: inline-block; background: #E3F0E8; color: var(--color-primary);
-      font-size: 0.72rem; font-weight: 700; padding: 4px 12px;
-      border-radius: 100px; margin-bottom: 10px; letter-spacing: 0.06em;
+      display: inline-block; background: var(--green-pale); color: var(--green);
+      font-size: .7rem; font-weight: 800; padding: 3px 10px;
+      border-radius: 4px; margin-bottom: 8px; letter-spacing: .06em;
     }
-    .case-title { font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 8px; line-height: 1.6; }
-    .case-desc { font-size: 0.83rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 16px; }
-    .case-meta { display: flex; gap: 16px; font-size: 0.78rem; color: var(--color-text-muted); }
-    .case-meta strong { color: var(--color-primary); font-family: var(--font-en); }
+    .case-body { padding: 22px 22px 24px; }
+    .case-title { font-size: .97rem; font-weight: 700; color: var(--green-d); margin-bottom: 8px; line-height: 1.6; }
+    .case-desc { font-size: .83rem; color: var(--text-s); line-height: 1.8; margin-bottom: 14px; }
+    .case-meta { display: flex; gap: 14px; font-size: .78rem; color: var(--text-s); }
+    .case-meta strong { color: var(--green); font-weight: 700; }
 
-    /* ── VOICE ── */
-    .voice { background: var(--color-bg-warm); }
-    .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    /* ─── VOICE ─── */
+    .voice { background: var(--warm); }
+    .voice-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .voice-card {
-      background: #fff; border-radius: 16px; padding: 32px;
-      border: 2px solid var(--color-border); box-shadow: 0 4px 0 var(--color-bg-warm2);
-      position: relative;
+      background: #fff; border: 2px solid var(--border);
+      border-radius: 12px; padding: 28px 26px;
+      box-shadow: 4px 4px 0 var(--warm2);
     }
-    .voice-quote {
-      font-family: var(--font-en); font-size: 4rem; font-weight: 700;
-      color: var(--color-primary-light); line-height: 1; margin-bottom: 8px; opacity: 0.5;
-    }
-    .voice-stars { color: var(--color-accent); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
-    .voice-text { color: var(--color-text); font-size: 0.9rem; line-height: 1.9; margin-bottom: 24px; }
-    .voice-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--color-border); }
+    .voice-mark { font-family: var(--serif); font-size: 3.5rem; color: var(--green-pale); line-height: .8; margin-bottom: 6px; font-weight: 700; }
+    .voice-stars { color: #F5A623; font-size: .95rem; letter-spacing: 2px; margin-bottom: 12px; }
+    .voice-text { font-size: .87rem; color: var(--text); line-height: 1.9; margin-bottom: 20px; }
+    .voice-sep { height: 1px; background: var(--border); margin-bottom: 16px; }
+    .voice-author { display: flex; align-items: center; gap: 12px; }
     .voice-avatar {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: var(--color-bg-warm); border: 2px solid var(--color-border);
-      display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+      background: var(--warm); border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
     }
-    .voice-name { font-weight: 700; font-size: 0.88rem; color: var(--color-text); }
-    .voice-info { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px; }
+    .voice-name { font-weight: 700; font-size: .87rem; }
+    .voice-info { font-size: .75rem; color: var(--text-s); margin-top: 2px; }
 
-    /* ── FAQ ── */
-    .faq { background: var(--color-bg); }
-    .faq-list { max-width: 720px; margin: 0 auto; }
-    .faq-item { border-bottom: 2px solid var(--color-border); padding: 28px 0; }
+    /* ─── FAQ ─── */
+    .faq { background: var(--cream); }
+    .faq-wrap { max-width: 700px; margin: 0 auto; }
+    .faq-item { border-bottom: 2px solid var(--border); padding: 26px 0; }
     .faq-q {
-      font-weight: 700; color: var(--color-primary-dark); font-size: 0.97rem;
-      margin-bottom: 12px; display: flex; gap: 14px; align-items: flex-start; line-height: 1.6;
+      font-weight: 700; font-size: .95rem; color: var(--green-d);
+      display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; line-height: 1.6;
     }
-    .faq-q-icon {
-      background: var(--color-primary); color: #fff;
-      width: 26px; height: 26px; border-radius: 8px; border: 1.5px solid var(--color-line);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-en); font-size: 0.78rem; font-weight: 700; flex-shrink: 0;
+    .faq-q-badge {
+      background: var(--green); color: #fff; font-size: .72rem; font-weight: 800;
+      width: 24px; height: 24px; border-radius: 6px; border: 1.5px solid var(--text);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
     }
-    .faq-a { font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.9; padding-left: 40px; }
+    .faq-a { font-size: .87rem; color: var(--text-s); line-height: 1.9; padding-left: 36px; }
 
-    /* ── CTA ── */
-    .cta { background: var(--color-bg-warm); text-align: center; }
-    .cta-box {
-      background: #fff; border-radius: 24px; padding: 72px 56px;
-      border: 2px solid var(--color-line);
-      box-shadow: 6px 6px 0 var(--color-bg-warm2);
-      max-width: 760px; margin: 0 auto;
+    /* ─── CTA ─── */
+    .cta { background: var(--green-d); }
+    .cta-inner {
+      max-width: 780px; margin: 0 auto; text-align: center; padding: 0 40px;
     }
-    .cta-box .section-title { text-align: center; margin-bottom: 12px; }
-    .cta-box .section-desc { text-align: center; margin: 0 auto 36px; }
-    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .cta-note { margin-top: 20px; font-size: 0.78rem; color: var(--color-text-muted); }
+    .cta .sec-label { color: var(--green-l); }
+    .cta .sec-title { color: #fff; text-align: center; }
+    .cta-desc { color: rgba(255,255,255,.75); font-size: .93rem; margin: 0 auto 36px; max-width: 500px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-main {
+      background: var(--amber); color: #fff;
+      padding: 16px 44px; border-radius: 8px; font-weight: 800; font-size: 1rem;
+      text-decoration: none; border: 2px solid #fff;
+      box-shadow: 4px 4px 0 rgba(0,0,0,.3); transition: all .15s; letter-spacing: .04em;
+    }
+    .btn-cta-main:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 rgba(0,0,0,.3); }
+    .btn-cta-sub {
+      background: transparent; color: #fff;
+      padding: 16px 36px; border-radius: 8px; font-weight: 700; font-size: 1rem;
+      text-decoration: none; border: 2px solid rgba(255,255,255,.5); transition: all .15s;
+    }
+    .btn-cta-sub:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+    .cta-note { margin-top: 20px; font-size: .75rem; color: rgba(255,255,255,.5); }
 
-    /* ── FOOTER ── */
+    /* ─── FOOTER ─── */
     footer {
-      background: var(--color-primary-dark); color: rgba(255,255,255,0.7);
-      padding: 64px 48px 40px;
-      border-top: 3px solid var(--color-line);
+      background: #111; color: rgba(255,255,255,.6);
+      padding: 60px 40px 36px; border-top: 2px solid var(--text);
     }
     .footer-inner { max-width: 1080px; margin: 0 auto; }
     .footer-top {
       display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
-      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.15); margin-bottom: 36px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.1); margin-bottom: 32px;
     }
-    .footer-logo { font-family: var(--font-serif); font-size: 1.8rem; color: #fff; margin-bottom: 14px; }
-    .footer-logo span { color: var(--color-primary-light); }
-    .footer-about { font-size: 0.83rem; line-height: 1.9; }
-    .footer-nav h4 { color: #fff; font-size: 0.83rem; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.1em; }
-    .footer-nav ul { list-style: none; }
-    .footer-nav li { margin-bottom: 10px; }
-    .footer-nav a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
-    .footer-nav a:hover { color: var(--color-primary-light); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+    .footer-logo { font-family: var(--serif); font-size: 1.7rem; color: #fff; margin-bottom: 12px; }
+    .footer-logo em { font-style: normal; color: var(--green-l); }
+    .footer-about { font-size: .82rem; line-height: 1.9; }
+    .footer-col h4 { color: #fff; font-size: .8rem; font-weight: 700; margin-bottom: 14px; letter-spacing: .1em; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 9px; }
+    .footer-col a { color: rgba(255,255,255,.5); text-decoration: none; font-size: .82rem; transition: color .2s; }
+    .footer-col a:hover { color: var(--green-l); }
+    .footer-bottom { display: flex; justify-content: space-between; font-size: .75rem; }
 
-    /* ── RESPONSIVE ── */
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       header { padding: 0 20px; }
       nav { display: none; }
-      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 40px; }
-      .hero-visual { height: 260px; }
+      .hero-inner { padding: 0 24px; }
       section { padding: 60px 24px; }
-      .concerns-grid, .features-grid, .cases-grid, .voice-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-      .process-steps::before { display: none; }
+      .stats-inner { grid-template-columns: 1fr 1fr 1fr; }
+      .stat-num { font-size: 1.8rem; }
+      .concern-grid, .feat-grid, .case-grid, .voice-grid { grid-template-columns: 1fr; }
+      .proc-grid { grid-template-columns: 1fr 1fr; }
+      .proc-grid::before { display: none; }
       .footer-top { grid-template-columns: 1fr; gap: 28px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .cta-box { padding: 48px 28px; }
+      .footer-bottom { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <a href="#" class="logo">リ<span>ス</span>ム</a>
-    <nav>
-      <a href="#concerns">お悩み</a>
-      <a href="#features">特長</a>
-      <a href="#process">流れ</a>
-      <a href="#cases">実績</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="nav-cta">無料相談</a>
-    </nav>
-  </header>
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">リ<em>ス</em>ム</a>
+  <nav>
+    <a href="#concerns">お悩み</a>
+    <a href="#features">特長</a>
+    <a href="#process">流れ</a>
+    <a href="#cases">実績</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-btn">無料相談</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">空き家・古民家リノベーション専門</div>
-      <h1>眠っている家に、<br /><em>新しい命</em>を吹き込む</h1>
-      <p class="hero-desc">
-        リスムは、空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。
-        地域に根ざした丁寧な提案で、あなたの想いを形にします。
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">無料相談を予約する →</a>
-        <a href="#cases" class="btn-secondary">施工事例を見る</a>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">空き家・古民家リノベーション専門</div>
+    <h1>眠っている家に、<br /><em>新しい命</em>を吹き込む</h1>
+    <p class="hero-desc">リスムは、空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。地域に根ざした丁寧な提案で、あなたの想いを形にします。</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-main">無料相談を予約する →</a>
+      <a href="#cases" class="btn-sub">施工事例を見る</a>
     </div>
-    <div class="hero-visual">
-      <div class="hero-image-main">
-        <div class="hero-image-text">
-          <p>空き家を<br />宝に変える</p>
-          <span>Reform × Resume = RISUM</span>
-        </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">150<span>+</span></div>
+      <div class="stat-label">累計施工実績</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98<span>%</span></div>
+      <div class="stat-label">顧客満足度</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0<span>円</span></div>
+      <div class="stat-label">初回相談料</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CONCERNS -->
+<section class="concerns" id="concerns">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-label">Concerns</div>
+      <h2 class="sec-title"><span class="underline-deco">こんなお悩みありませんか？</span></h2>
+      <p class="sec-desc">空き家・古民家をお持ちの方のよくある3つの悩みに、リスムは一貫して応えます。</p>
+    </div>
+    <div class="concern-grid">
+      <div class="concern-card">
+        <div class="concern-card-icon">🏚️</div>
+        <div class="concern-card-num">CONCERN 01</div>
+        <div class="concern-card-title">誰も住まなくなった実家が放置されている</div>
+        <p class="concern-card-body">老朽化や管理コストが気になるが、どこに相談すればいいかわからない。</p>
       </div>
-      <div class="hero-stat hero-stat-1">
-        <div class="num">150+</div>
-        <div class="label">累計施工実績</div>
+      <div class="concern-card">
+        <div class="concern-card-icon">🔑</div>
+        <div class="concern-card-num">CONCERN 02</div>
+        <div class="concern-card-title">古民家を活用したいけど費用が不安</div>
+        <p class="concern-card-body">リノベーションに興味はあるが、古い建物は費用が高そうで踏み出せない。</p>
       </div>
-      <div class="hero-stat hero-stat-2">
-        <div class="num">98%</div>
-        <div class="label">顧客満足度</div>
+      <div class="concern-card">
+        <div class="concern-card-icon">📋</div>
+        <div class="concern-card-num">CONCERN 03</div>
+        <div class="concern-card-title">補助金や手続きが複雑で進められない</div>
+        <p class="concern-card-body">補助金制度があると聞いたが申請方法が難しく、どこから手をつければいいかわからない。</p>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="section-divider"></div>
+<div class="divider"></div>
 
-  <!-- CONCERNS -->
-  <section class="concerns" id="concerns">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-label">Concerns</div>
-        <h2 class="section-title"><span class="section-title-underline">こんなお悩みありませんか？</span></h2>
-        <p class="section-desc">空き家・古民家をお持ちの方のよくある3つの悩みに、リスムは一貫して応えます。</p>
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-label">Features</div>
+      <h2 class="sec-title"><span class="underline-deco">リスムが選ばれる3つの理由</span></h2>
+      <p class="sec-desc">空き家・古民家リノベーションに特化したプロが、ワンストップでサポートします。</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-tag">REASON 01</div>
+        <div class="feat-icon">🏡</div>
+        <div class="feat-bar"></div>
+        <h3 class="feat-title">古民家・空き家に特化</h3>
+        <p class="feat-body">一般的なリフォーム会社では断られがちな古民家・空き家も、豊富な経験と専門知識でしっかり対応。構造診断から竣工まで一貫してサポートします。</p>
       </div>
-      <div class="concerns-grid">
-        <div class="concern-card">
-          <div class="concern-icon">🏚️</div>
-          <div class="concern-num">01</div>
-          <div class="concern-title">誰も住まなくなった実家が放置されている</div>
-          <p class="concern-desc">老朽化や管理コストが気になるが、どこに相談すればいいかわからない。</p>
-        </div>
-        <div class="concern-card">
-          <div class="concern-icon">🔑</div>
-          <div class="concern-num">02</div>
-          <div class="concern-title">古民家を活用したいけど費用が不安</div>
-          <p class="concern-desc">リノベーションに興味はあるが、古い建物は費用が高そうで踏み出せない。</p>
-        </div>
-        <div class="concern-card">
-          <div class="concern-icon">📋</div>
-          <div class="concern-num">03</div>
-          <div class="concern-title">補助金や手続きが複雑で進められない</div>
-          <p class="concern-desc">補助金制度があると聞いたが、申請方法が難しくてどこから手をつければいいかわからない。</p>
-        </div>
+      <div class="feat-card">
+        <div class="feat-tag">REASON 02</div>
+        <div class="feat-icon">💬</div>
+        <div class="feat-bar"></div>
+        <h3 class="feat-title">ワンストップ相談窓口</h3>
+        <p class="feat-body">設計・施工・資金調達・補助金申請まで、窓口はリスム一本。複数業者への連絡や調整の手間を省き、スムーズな進行を実現します。</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-tag">REASON 03</div>
+        <div class="feat-icon">🌿</div>
+        <div class="feat-bar"></div>
+        <h3 class="feat-title">地域素材×現代デザイン</h3>
+        <p class="feat-body">地元の木材や職人技を活かしながら、現代の暮らしに合ったデザインに再生。その土地の魅力を引き出した、唯一無二の住まいをご提案します。</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider"></div>
+<div class="divider"></div>
 
-  <!-- FEATURES -->
-  <section class="features" id="features">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-label">Features</div>
-        <h2 class="section-title"><span class="section-title-underline">リスムが選ばれる3つの理由</span></h2>
-        <p class="section-desc">空き家・古民家リノベーションに特化したプロが、ワンストップでサポートします。</p>
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-label">Process</div>
+      <h2 class="sec-title"><span class="underline-deco">ご相談から完成まで</span></h2>
+      <p class="sec-desc">はじめての方でも安心。4つのステップで、理想の住まいへ。</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <div class="proc-title">無料相談</div>
+        <p class="proc-body">物件の状態やご要望をヒアリング。オンラインでも対応可能です。</p>
       </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-num">REASON 01</div>
-          <div class="feature-divider"></div>
-          <div class="feature-icon">🏡</div>
-          <h3 class="feature-title">古民家・空き家に特化</h3>
-          <p class="feature-desc">一般的なリフォーム会社では断られがちな古民家・空き家も、豊富な経験と専門知識でしっかり対応。構造診断から竣工まで一貫サポートします。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-num">REASON 02</div>
-          <div class="feature-divider"></div>
-          <div class="feature-icon">💬</div>
-          <h3 class="feature-title">ワンストップ相談窓口</h3>
-          <p class="feature-desc">設計・施工・資金調達・補助金申請まで、窓口はリスム一本。複数業者への連絡や調整の手間を省き、スムーズな進行を実現します。</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-num">REASON 03</div>
-          <div class="feature-divider"></div>
-          <div class="feature-icon">🌿</div>
-          <h3 class="feature-title">地域素材×現代デザイン</h3>
-          <p class="feature-desc">地元の木材や職人技を活かしながら、現代の暮らしに合ったデザインに再生。その土地の魅力を引き出した、唯一無二の住まいをご提案します。</p>
-        </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <div class="proc-title">現地調査・診断</div>
+        <p class="proc-body">専門家が物件を詳しく調査。構造・設備・劣化状況を確認します。</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <div class="proc-title">プラン・お見積り</div>
+        <p class="proc-body">ご要望と予算に合わせたプランをご提案。補助金活用もご案内します。</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <div class="proc-title">施工・お引渡し</div>
+        <p class="proc-body">丁寧な施工と定期報告で安心。完成後のアフターサポートも充実。</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider"></div>
+<div class="divider"></div>
 
-  <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-label">Process</div>
-        <h2 class="section-title"><span class="section-title-underline">ご相談から完成まで</span></h2>
-        <p class="section-desc">はじめての方でも安心。4つのステップで、理想の住まいへ。</p>
-      </div>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="process-num">01</div>
-          <div class="process-step-title">無料相談</div>
-          <p class="process-step-desc">物件の状態やご要望をヒアリング。オンラインでも対応可能です。</p>
-        </div>
-        <div class="process-step">
-          <div class="process-num">02</div>
-          <div class="process-step-title">現地調査・診断</div>
-          <p class="process-step-desc">専門家が物件を詳しく調査。構造・設備・劣化状況を確認します。</p>
-        </div>
-        <div class="process-step">
-          <div class="process-num">03</div>
-          <div class="process-step-title">プラン・お見積り</div>
-          <p class="process-step-desc">ご要望と予算に合わせたプランをご提案。補助金活用もご案内します。</p>
-        </div>
-        <div class="process-step">
-          <div class="process-num">04</div>
-          <div class="process-step-title">施工・お引渡し</div>
-          <p class="process-step-desc">丁寧な施工と定期報告で安心。完成後のアフターサポートも充実。</p>
-        </div>
-      </div>
+<!-- CASES -->
+<section class="cases" id="cases">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-label">Cases</div>
+      <h2 class="sec-title"><span class="underline-deco">施工事例</span></h2>
+      <p class="sec-desc">実際にリスムが手がけた空き家・古民家の再生事例をご紹介します。</p>
     </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- CASES -->
-  <section class="cases" id="cases">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-label">Cases</div>
-        <h2 class="section-title"><span class="section-title-underline">施工事例</span></h2>
-        <p class="section-desc">実際にリスムが手がけた空き家・古民家の再生事例をご紹介します。</p>
-      </div>
-      <div class="cases-grid">
-        <div class="case-card">
-          <div class="case-img case-img-1">🏠</div>
-          <div class="case-body">
-            <span class="case-tag">古民家リノベ</span>
-            <h3 class="case-title">築80年の古民家を家族の拠点に再生</h3>
-            <p class="case-desc">梁や柱を活かしながら、断熱・耐震性能を現代水準に。週末移住拠点として活用中。</p>
-            <div class="case-meta">
-              <span>工期: <strong>4ヶ月</strong></span>
-              <span>予算: <strong>800万円台</strong></span>
-            </div>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-img-wrap">
+          <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80" alt="古民家リノベーション事例" loading="lazy" />
+        </div>
+        <div class="case-body">
+          <span class="case-tag">古民家リノベ</span>
+          <h3 class="case-title">築80年の古民家を家族の拠点に再生</h3>
+          <p class="case-desc">梁や柱を活かしながら、断熱・耐震性能を現代水準に。週末移住拠点として活用中。</p>
+          <div class="case-meta">
+            <span>工期: <strong>4ヶ月</strong></span>
+            <span>予算: <strong>800万円台</strong></span>
           </div>
         </div>
-        <div class="case-card">
-          <div class="case-img case-img-2">🏡</div>
-          <div class="case-body">
-            <span class="case-tag">空き家活用</span>
-            <h3 class="case-title">10年空き家を民泊施設へ転換</h3>
-            <p class="case-desc">補助金を最大活用し、総費用を大幅圧縮。開業から半年でコスト回収の見通しも。</p>
-            <div class="case-meta">
-              <span>工期: <strong>3ヶ月</strong></span>
-              <span>予算: <strong>500万円台</strong></span>
-            </div>
+      </div>
+      <div class="case-card">
+        <div class="case-img-wrap">
+          <img src="https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?w=600&q=80" alt="空き家活用事例" loading="lazy" />
+        </div>
+        <div class="case-body">
+          <span class="case-tag">空き家活用</span>
+          <h3 class="case-title">10年空き家を民泊施設へ転換</h3>
+          <p class="case-desc">補助金を最大活用し、総費用を大幅圧縮。開業から半年でコスト回収の見通しも。</p>
+          <div class="case-meta">
+            <span>工期: <strong>3ヶ月</strong></span>
+            <span>予算: <strong>500万円台</strong></span>
           </div>
         </div>
-        <div class="case-card">
-          <div class="case-img case-img-3">🌿</div>
-          <div class="case-body">
-            <span class="case-tag">フルリノベ</span>
-            <h3 class="case-title">築50年の実家を二世帯住宅にリノベ</h3>
-            <p class="case-desc">親世帯・子世帯それぞれのプライバシーを確保しながら、つながりを感じる設計に。</p>
-            <div class="case-meta">
-              <span>工期: <strong>5ヶ月</strong></span>
-              <span>予算: <strong>1,200万円台</strong></span>
-            </div>
+      </div>
+      <div class="case-card">
+        <div class="case-img-wrap">
+          <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=600&q=80" alt="二世帯住宅リノベーション事例" loading="lazy" />
+        </div>
+        <div class="case-body">
+          <span class="case-tag">フルリノベ</span>
+          <h3 class="case-title">築50年の実家を二世帯住宅にリノベ</h3>
+          <p class="case-desc">親世帯・子世帯それぞれのプライバシーを確保しながら、つながりを感じる設計に。</p>
+          <div class="case-meta">
+            <span>工期: <strong>5ヶ月</strong></span>
+            <span>予算: <strong>1,200万円台</strong></span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider"></div>
+<div class="divider"></div>
 
-  <!-- VOICE -->
-  <section class="voice" id="voice">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-label">Voice</div>
-        <h2 class="section-title"><span class="section-title-underline">お客様の声</span></h2>
-        <p class="section-desc">リスムを選んでいただいたお客様からのリアルな声をご紹介します。</p>
-      </div>
-      <div class="voice-grid">
-        <div class="voice-card">
-          <div class="voice-quote">"</div>
-          <div class="voice-stars">★★★★★</div>
-          <p class="voice-text">他社では難しいと断られた古民家でしたが、リスムさんは可能性を見出してくれました。完成した住まいは想像以上で、毎日が楽しいです。</p>
-          <div class="voice-author">
-            <div class="voice-avatar">👨</div>
-            <div>
-              <div class="voice-name">田中 健二さん</div>
-              <div class="voice-info">40代・兵庫県 / 古民家リノベ</div>
-            </div>
-          </div>
-        </div>
-        <div class="voice-card">
-          <div class="voice-quote">"</div>
-          <div class="voice-stars">★★★★★</div>
-          <p class="voice-text">補助金の申請もすべてお任せできて助かりました。費用が想定より大幅に抑えられ、使いやすい民泊施設が完成しました。</p>
-          <div class="voice-author">
-            <div class="voice-avatar">👩</div>
-            <div>
-              <div class="voice-name">山田 裕子さん</div>
-              <div class="voice-info">50代・京都府 / 空き家活用</div>
-            </div>
-          </div>
-        </div>
-        <div class="voice-card">
-          <div class="voice-quote">"</div>
-          <div class="voice-stars">★★★★★</div>
-          <p class="voice-text">担当の方が毎週進捗を報告してくれたので安心でした。遠方に住んでいても実家の改修をスムーズに進めることができました。</p>
-          <div class="voice-author">
-            <div class="voice-avatar">👨</div>
-            <div>
-              <div class="voice-name">佐藤 雄一さん</div>
-              <div class="voice-info">30代・東京都 / 実家リノベ</div>
-            </div>
+<!-- VOICE -->
+<section class="voice" id="voice">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-label">Voice</div>
+      <h2 class="sec-title"><span class="underline-deco">お客様の声</span></h2>
+      <p class="sec-desc">リスムを選んでいただいたお客様からのリアルな声をご紹介します。</p>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="voice-mark">"</div>
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">他社では難しいと断られた古民家でしたが、リスムさんは可能性を見出してくれました。完成した住まいは想像以上で、毎日が楽しいです。</p>
+        <div class="voice-sep"></div>
+        <div class="voice-author">
+          <div class="voice-avatar">👨</div>
+          <div>
+            <div class="voice-name">田中 健二さん</div>
+            <div class="voice-info">40代・兵庫県 / 古民家リノベ</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="section-inner">
-      <div class="section-header" style="text-align:center;">
-        <div class="section-label">FAQ</div>
-        <h2 class="section-title" style="text-align:center;">よくあるご質問</h2>
+      <div class="voice-card">
+        <div class="voice-mark">"</div>
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">補助金の申請もすべてお任せできて助かりました。費用が想定より大幅に抑えられ、使いやすい民泊施設が完成しました。</p>
+        <div class="voice-sep"></div>
+        <div class="voice-author">
+          <div class="voice-avatar">👩</div>
+          <div>
+            <div class="voice-name">山田 裕子さん</div>
+            <div class="voice-info">50代・京都府 / 空き家活用</div>
+          </div>
+        </div>
       </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q"><span class="faq-q-icon">Q</span>相談だけでも大丈夫ですか？</div>
-          <p class="faq-a">はい、もちろんです。初回相談は完全無料です。物件を購入するかどうかまだ決まっていない段階でも、お気軽にご相談ください。</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span class="faq-q-icon">Q</span>遠方に住んでいますが相談できますか？</div>
-          <p class="faq-a">オンライン（Zoom）での相談に対応しています。現地調査は提携パートナーが行い、進捗報告も定期的にオンラインで実施しますので、遠方の方でも安心してご依頼いただけます。</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span class="faq-q-icon">Q</span>補助金は使えますか？</div>
-          <p class="faq-a">国・都道府県・市区町村の補助金・助成金を積極的に活用しています。物件の状況や工事内容によって使える補助金が異なりますので、相談時に詳しくご案内します。</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span class="faq-q-icon">Q</span>工事中の費用はいつ払いますか？</div>
-          <p class="faq-a">一般的には「着工時・中間時・完成時」の3回払いとなります。ご事情に応じてご相談も可能ですので、お気軽にお申し付けください。</p>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q"><span class="faq-q-icon">Q</span>アフターサポートはありますか？</div>
-          <p class="faq-a">お引渡し後も定期点検（1ヶ月・6ヶ月・1年・2年）を実施しています。気になる点があればいつでもご連絡ください。</p>
+      <div class="voice-card">
+        <div class="voice-mark">"</div>
+        <div class="voice-stars">★★★★★</div>
+        <p class="voice-text">担当の方が毎週進捗を報告してくれたので安心でした。遠方に住んでいても実家の改修をスムーズに進めることができました。</p>
+        <div class="voice-sep"></div>
+        <div class="voice-author">
+          <div class="voice-avatar">👨</div>
+          <div>
+            <div class="voice-name">佐藤 雄一さん</div>
+            <div class="voice-info">30代・東京都 / 実家リノベ</div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="section-divider"></div>
+<div class="divider"></div>
 
-  <!-- CTA -->
-  <section class="cta" id="contact">
-    <div class="section-inner">
-      <div class="cta-box">
-        <div class="section-label" style="text-align:center;">Contact</div>
-        <h2 class="section-title" style="text-align:center;">まずは無料相談から</h2>
-        <p class="section-desc" style="text-align:center; margin: 0 auto 36px;">空き家・古民家のことなら、どんな小さなご相談でもお気軽に。専門スタッフが丁寧にお答えします。</p>
-        <div class="cta-actions">
-          <a href="#" class="btn-primary">無料相談を予約する →</a>
-          <a href="#" class="btn-secondary">資料請求する</a>
-        </div>
-        <p class="cta-note">🔒 個人情報は厳重に管理します。迷惑メールは一切送りません。</p>
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="sec-inner">
+    <div class="sec-head" style="text-align:center;">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">よくあるご質問</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-badge">Q</span>相談だけでも大丈夫ですか？</div>
+        <p class="faq-a">はい、もちろんです。初回相談は完全無料です。物件を購入するかどうかまだ決まっていない段階でも、お気軽にご相談ください。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-badge">Q</span>遠方に住んでいますが相談できますか？</div>
+        <p class="faq-a">オンライン（Zoom）での相談に対応しています。現地調査は提携パートナーが行い、進捗報告も定期的にオンラインで実施しますので、遠方の方でも安心してご依頼いただけます。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-badge">Q</span>補助金は使えますか？</div>
+        <p class="faq-a">国・都道府県・市区町村の補助金・助成金を積極的に活用しています。物件の状況や工事内容によって使える補助金が異なりますので、相談時に詳しくご案内します。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-badge">Q</span>工事中の費用はいつ払いますか？</div>
+        <p class="faq-a">一般的には「着工時・中間時・完成時」の3回払いとなります。ご事情に応じてご相談も可能ですので、お気軽にお申し付けください。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="faq-q-badge">Q</span>アフターサポートはありますか？</div>
+        <p class="faq-a">お引渡し後も定期点検（1ヶ月・6ヶ月・1年・2年）を実施しています。気になる点があればいつでもご連絡ください。</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div>
-          <div class="footer-logo">リ<span>ス</span>ム</div>
-          <p class="footer-about">空き家・古民家を価値ある住まいに再生する、リノベーション専門サービスです。地域に根ざした丁寧なご提案で、あなたの想いを形にします。</p>
-        </div>
-        <div class="footer-nav">
-          <h4>サービス</h4>
-          <ul>
-            <li><a href="#">古民家リノベ</a></li>
-            <li><a href="#">空き家活用</a></li>
-            <li><a href="#">フルリノベ</a></li>
-            <li><a href="#">民泊転換</a></li>
-          </ul>
-        </div>
-        <div class="footer-nav">
-          <h4>会社情報</h4>
-          <ul>
-            <li><a href="#">会社概要</a></li>
-            <li><a href="#">施工事例</a></li>
-            <li><a href="#">お客様の声</a></li>
-            <li><a href="#">採用情報</a></li>
-          </ul>
-        </div>
-        <div class="footer-nav">
-          <h4>サポート</h4>
-          <ul>
-            <li><a href="#">無料相談</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">プライバシーポリシー</a></li>
-            <li><a href="#">特定商取引法</a></li>
-          </ul>
-        </div>
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <div class="sec-label">Contact</div>
+    <h2 class="sec-title">まずは無料相談から</h2>
+    <p class="cta-desc">空き家・古民家のことなら、どんな小さなご相談でもお気軽に。専門スタッフが丁寧にお答えします。</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-cta-main">無料相談を予約する →</a>
+      <a href="#" class="btn-cta-sub">資料請求する</a>
+    </div>
+    <p class="cta-note">🔒 個人情報は厳重に管理します。迷惑メールは一切送りません。</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">リ<em>ス</em>ム</div>
+        <p class="footer-about">空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。地域に根ざした丁寧なご提案で、あなたの想いを形にします。</p>
       </div>
-      <div class="footer-bottom">
-        <span>© 2026 リスム All rights reserved.</span>
-        <span>空き家・古民家リノベーションの専門家</span>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="#">古民家リノベ</a></li>
+          <li><a href="#">空き家活用</a></li>
+          <li><a href="#">フルリノベ</a></li>
+          <li><a href="#">民泊転換</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>会社情報</h4>
+        <ul>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">施工事例</a></li>
+          <li><a href="#">お客様の声</a></li>
+          <li><a href="#">採用情報</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="#">無料相談</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">特定商取引法</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>© 2026 リスム All rights reserved.</span>
+      <span>空き家・古民家リノベーションの専門家</span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
