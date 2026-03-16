@@ -35,7 +35,7 @@
     header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(250,250,245,0.97); backdrop-filter: blur(10px);
-      border-bottom: 2px solid var(--text);
+      border-bottom: 1px solid var(--border);
       height: 64px; padding: 0 40px;
       display: flex; align-items: center; justify-content: space-between;
     }
@@ -59,11 +59,11 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1480796927426-f609979314bd?w=1400&q=80') center/cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1400&q=80') center/cover no-repeat;
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(17,17,17,.82) 0%, rgba(17,17,17,.55) 55%, rgba(17,17,17,.15) 100%);
+      background: linear-gradient(to right, rgba(17,17,17,.75) 0%, rgba(17,17,17,.45) 55%, rgba(17,17,17,.1) 100%);
     }
     .hero-inner {
       position: relative; z-index: 1;
@@ -128,7 +128,7 @@
     .stat-label { color: rgba(255,255,255,.7); font-size: .8rem; margin-top: 6px; }
 
     /* ─── SECTION UTILS ─── */
-    .divider { height: 2px; background: var(--text); }
+    .divider { height: 1px; background: var(--border); }
     section { padding: 88px 40px; }
     .sec-inner { max-width: 1080px; margin: 0 auto; }
     .sec-label {
@@ -149,9 +149,9 @@
     .concerns { background: var(--bg-warm); }
     .concern-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .concern-card {
-      background: #fff; border: 2px solid var(--border);
-      border-radius: 12px; padding: 32px 28px;
-      box-shadow: 4px 4px 0 var(--bg-warm2); transition: transform .2s;
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 18px; padding: 32px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.05); transition: transform .2s;
     }
     .concern-card:hover { transform: translateY(-4px); }
     .concern-card-icon { font-size: 2.4rem; margin-bottom: 14px; }
@@ -163,9 +163,9 @@
     .features { background: var(--bg); }
     .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .feat-card {
-      background: #fff; border: 2px solid var(--border);
-      border-radius: 12px; padding: 36px 28px;
-      box-shadow: 4px 4px 0 var(--bg-warm2); transition: transform .2s;
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 18px; padding: 36px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.05); transition: transform .2s;
     }
     .feat-card:hover { transform: translateY(-4px); }
     .feat-tag {
@@ -193,7 +193,7 @@
       font-size: 1.3rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 18px;
-      border: 2px solid var(--text); box-shadow: 3px 3px 0 var(--text);
+      box-shadow: 0 6px 18px rgba(0,0,0,.18);
     }
     .proc-title { font-weight: 700; font-size: .93rem; color: var(--dark); margin-bottom: 8px; }
     .proc-body { font-size: .82rem; color: var(--text-s); line-height: 1.8; }
@@ -202,9 +202,9 @@
     .cases { background: var(--bg); }
     .case-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .case-card {
-      border-radius: 12px; overflow: hidden;
-      border: 2px solid var(--border);
-      box-shadow: 4px 4px 0 var(--bg-warm2); transition: transform .2s;
+      border-radius: 18px; overflow: hidden;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,.06); transition: transform .2s;
       background: #fff;
     }
     .case-card:hover { transform: translateY(-4px); }
@@ -224,9 +224,9 @@
     .voice { background: var(--bg-warm); }
     .voice-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .voice-card {
-      background: #fff; border: 2px solid var(--border);
-      border-radius: 12px; padding: 28px 26px;
-      box-shadow: 4px 4px 0 var(--bg-warm2);
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 18px; padding: 28px 26px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.05);
     }
     .voice-mark { font-family: var(--serif); font-size: 3.5rem; color: var(--accent-pale); line-height: .8; margin-bottom: 6px; font-weight: 700; }
     .voice-stars { color: #F5A623; font-size: .95rem; letter-spacing: 2px; margin-bottom: 12px; }
@@ -250,8 +250,8 @@
       display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; line-height: 1.6;
     }
     .faq-q-badge {
-      background: var(--dark); color: #fff; font-size: .72rem; font-weight: 800;
-      width: 24px; height: 24px; border-radius: 6px; border: 1.5px solid var(--text);
+      background: var(--accent); color: #fff; font-size: .72rem; font-weight: 800;
+      width: 24px; height: 24px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
     }
     .faq-a { font-size: .87rem; color: var(--text-s); line-height: 1.9; padding-left: 36px; }
@@ -282,7 +282,7 @@
     /* ─── FOOTER ─── */
     footer {
       background: #111; color: rgba(255,255,255,.6);
-      padding: 60px 40px 36px; border-top: 2px solid var(--text);
+      padding: 60px 40px 36px; border-top: 1px solid rgba(255,255,255,.12);
     }
     .footer-inner { max-width: 1080px; margin: 0 auto; }
     .footer-top {
@@ -336,8 +336,8 @@
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-badge">空き家・古民家リノベーション専門</div>
-    <h1>眠っている家に、<br /><em>新しい命</em>を吹き込む</h1>
-    <p class="hero-desc">リスムは、空き家・古民家を価値ある住まいに再生するリノベーション専門サービスです。地域に根ざした丁寧な提案で、あなたの想いを形にします。</p>
+    <h1>あの家を、また<br /><em>好きになれる</em></h1>
+    <p class="hero-desc">「どうすればいいかわからない」「費用が心配」——そんな方こそ、まずお気軽にご相談ください。空き家・古民家のプロが、あなたの想いに寄り添いながら一緒に考えます。</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-main">無料相談を予約する →</a>
       <a href="#cases" class="btn-sub">施工事例を見る</a>
@@ -372,7 +372,7 @@
     <div class="sec-head">
       <div class="sec-label">Concerns</div>
       <h2 class="sec-title"><span class="underline-deco">こんなお悩みありませんか？</span></h2>
-      <p class="sec-desc">空き家・古民家をお持ちの方のよくある3つの悩みに、リスムは一貫して応えます。</p>
+      <p class="sec-desc">「放っておくのも心苦しい、でも何から始めればいいかわからない」——そのお気持ち、よくわかります。</p>
     </div>
     <div class="concern-grid">
       <div class="concern-card">
@@ -405,7 +405,7 @@
     <div class="sec-head">
       <div class="sec-label">Features</div>
       <h2 class="sec-title"><span class="underline-deco">リスムが選ばれる3つの理由</span></h2>
-      <p class="sec-desc">空き家・古民家リノベーションに特化したプロが、ワンストップでサポートします。</p>
+      <p class="sec-desc">はじめての方でも安心して任せていただけるよう、私たちはいつでも丁寧にお話を聞きます。</p>
     </div>
     <div class="feat-grid">
       <div class="feat-card">
@@ -441,7 +441,7 @@
     <div class="sec-head">
       <div class="sec-label">Process</div>
       <h2 class="sec-title"><span class="underline-deco">ご相談から完成まで</span></h2>
-      <p class="sec-desc">はじめての方でも安心。4つのステップで、理想の住まいへ。</p>
+      <p class="sec-desc">難しい手続きや段取りはすべてリスムにお任せください。あなたはお話しするだけで大丈夫です。</p>
     </div>
     <div class="proc-grid">
       <div class="proc-step">
@@ -481,7 +481,7 @@
     <div class="case-grid">
       <div class="case-card">
         <div class="case-img-wrap">
-          <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80" alt="古民家リノベーション事例" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80" alt="古民家リノベーション事例" loading="lazy" />
         </div>
         <div class="case-body">
           <span class="case-tag">古民家リノベ</span>
@@ -495,7 +495,7 @@
       </div>
       <div class="case-card">
         <div class="case-img-wrap">
-          <img src="https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?w=600&q=80" alt="空き家活用事例" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="空き家活用事例" loading="lazy" />
         </div>
         <div class="case-body">
           <span class="case-tag">空き家活用</span>
@@ -509,7 +509,7 @@
       </div>
       <div class="case-card">
         <div class="case-img-wrap">
-          <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=600&q=80" alt="二世帯住宅リノベーション事例" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="二世帯住宅リノベーション事例" loading="lazy" />
         </div>
         <div class="case-body">
           <span class="case-tag">フルリノベ</span>
@@ -620,7 +620,7 @@
   <div class="cta-inner">
     <div class="sec-label">Contact</div>
     <h2 class="sec-title">まずは無料相談から</h2>
-    <p class="cta-desc">空き家・古民家のことなら、どんな小さなご相談でもお気軽に。専門スタッフが丁寧にお答えします。</p>
+    <p class="cta-desc">「売るのはもったいない、でも使い道がわからない」——そんな小さな一歩から始まります。気軽に話せる無料相談、ぜひご利用ください。</p>
     <div class="cta-btns">
       <a href="#" class="btn-cta-main">無料相談を予約する →</a>
       <a href="#" class="btn-cta-sub">資料請求する</a>
